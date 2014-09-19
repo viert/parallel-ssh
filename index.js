@@ -5,7 +5,7 @@ var events = require('events');
 
 var DEFAULT_MAX_THREADS = 50;
 var CONNECT_OPTION_KEYS = [
-    'host', 'port', 'hostHash', 'hostVerifier', 'username', 'password',
+    'port', 'hostHash', 'hostVerifier', 'username', 'password',
     'agent', 'privateKey', 'passphrase', 'tryKeyboard', 'pingInterval',
     'readyTimeout', 'sock', 'agentForward'
 ];
@@ -33,7 +33,7 @@ Parallel.prototype.exec = function(callback) {
                 return asyncCallback(null, result);
             }
             var conn = new SSHConnection(self.options);
-            var connectOptions = {};
+            var connectOptions = { host: host };
             CONNECT_OPTION_KEYS.forEach(function(key) {
                 if (self.options[key]) {
                     connectOptions[key] = self.options[key];
