@@ -1,6 +1,6 @@
 {
     "name": "parallel-ssh",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Parallel ssh command executer",
     "main": "index.js",
     "scripts" : {
