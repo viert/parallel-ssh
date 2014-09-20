@@ -19,7 +19,8 @@ function Parallel(hostList, command, options) {
     this.stopped = false;
     this._limit = options.maxThreads || DEFAULT_MAX_THREADS;
 }
-util.inherits(Parallel, events.EventEmitte  r);
+
+util.inherits(Parallel, events.EventEmitter);
 
 Parallel.prototype.exec = function(callback) {
     var self = this;
